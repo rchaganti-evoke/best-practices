@@ -67,3 +67,16 @@ async function callRateLimitedAPI(endpoint) {
   }
 }
 ```
+
+## 4. cache responses when possible into redis 
+
+## 5. do refresh the jwt token before it expires
+```javascript
+  async getValidToken() {
+    if (this.accessToken && Date.now() < this.expiresAt - 60000) {
+      return this.accessToken;
+    }
+    
+    return this.refreshToken();
+  }
+```
