@@ -277,6 +277,13 @@ import { setupRoutes } from './api/routes/index.js';
 setupRoutes(app);
 ```
 
+## 11. implement API Documentation (Swagger)
+
+## 12. use proper code formatting tools (Prettier)
+
+## 13. 
+
+
 
 
 
