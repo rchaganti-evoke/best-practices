@@ -45,3 +45,23 @@ Azure Boards:
   - [ ] Acceptance criteria met
   - [ ] Status appropriate
 ```
+
+#### For Reviewers
+
+```yaml
+Do:
+  ✅ Review within 24 hours
+  ✅ Be constructive and kind
+  ✅ Ask questions
+  ✅ Suggest improvements
+  ✅ Praise good work
+  ✅ Focus on important issues
+  ✅ Test the code locally if needed
+
+Don't:
+  ❌ Be overly critical
+  ❌ Nitpick minor formatting
+  ❌ Accept without understanding
+  ❌ Delay reviews
+  ❌ Approve without testing
+```
