@@ -1,3 +1,44 @@
+## simplified branching strategy 
+
+```mermaid
+sequenceDiagram
+    participant Dev as Developer
+    participant Main as main
+    participant Develop as develop
+    participant Story as Story Branch (S-xxxxx)
+    participant QA as qa
+    participant STG as STG/UAT Env
+    participant Release as Release Branch / Tag
+    participant PROD as PROD Env
+    participant Hotfix as Hotfix Branch
+
+    Dev->>Develop: Create story branches from develop
+    Story->>Dev: Work on feature
+    Story->>Develop: Merge completed stories into develop
+    Note right of Develop: All sprint stories integrated
+
+    Develop->>QA: Merge develop into qa at sprint end
+    Note right of QA: QA testing completed
+
+    QA->>Release: Create release branch or tag from qa
+    Release->>STG: Deploy release branch to STG/UAT
+    Note right of STG: UAT testing completed
+
+    alt UAT Approved
+        Release->>PROD: Deploy tag to PROD
+        Release->>Main: Merge release tag into main
+        Release->>Develop: Merge release tag into develop
+    else Issues Found
+        STG->>Hotfix: Create hotfix branch from main
+        Hotfix->>STG: Deploy hotfix for testing
+        Hotfix->>Release: Tag hotfix release
+        Hotfix->>PROD: Deploy hotfix tag to PROD
+        Hotfix->>Main: Merge hotfix into main
+        Hotfix->>Develop: Merge hotfix into develop
+    end
+
+```
+
 ## Module Release
 
 ```mermaid
